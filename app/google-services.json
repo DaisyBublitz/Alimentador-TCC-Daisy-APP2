@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "159117838944",
+    "firebase_url": "https://alimentador-tcc-daisy-default-rtdb.firebaseio.com",
+    "project_id": "alimentador-tcc-daisy",
+    "storage_bucket": "alimentador-tcc-daisy.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:159117838944:android:2f1bda49e25f9374c99105",
+        "android_client_info": {
+          "package_name": "com.example.alimentador_tcc_daisy_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "159117838944-jsqva177fbkirdsn9q6sremn0gfe99bj.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDY0_1hJdknOG-xLpTMt0PFJqdrivA0Q9M"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "159117838944-jsqva177fbkirdsn9q6sremn0gfe99bj.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
