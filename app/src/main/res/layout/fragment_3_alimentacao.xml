@@ -7,7 +7,7 @@
     tools:context=".DadosPetTutor">
 
     <TextView
-        android:id="@+id/INFOtextView"
+        android:id="@+id/tela3TituloTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
@@ -18,15 +18,14 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/QuantidadeTextView"
+        android:id="@+id/localLabelTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
-        android:layout_marginTop="48dp"
         android:text="kcal/dia"
         android:textSize="24sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/AlimtextView" />
+        tools:layout_editor_absoluteY="187dp" />
 
     <TextView
         android:id="@+id/AlimtextView"
@@ -37,40 +36,27 @@
         android:textSize="34sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/INFOtextView" />
-
-    <TextView
-        android:id="@+id/ALIMtextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="68dp"
-        android:text="DOSE RECOMENDADA"
-        android:textSize="34sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.507"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/INFOtextView" />
+        app:layout_constraintTop_toTopOf="@+id/tela3TituloTextView" />
 
     <EditText
-        android:id="@+id/editTextNumber"
+        android:id="@+id/localEditText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
         android:layout_marginEnd="32dp"
         android:ems="10"
         android:inputType="number"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/AlimtextView" />
+        tools:layout_editor_absoluteY="189dp" />
 
     <Button
-        android:id="@+id/Sairbutton5"
+        android:id="@+id/sairButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:backgroundTint="#00BCD4"
         android:text="Avançar"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="655dp" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/PrograDosetextView5"
@@ -82,7 +68,7 @@
         android:textSize="34sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextNumber" />
+        app:layout_constraintTop_toBottomOf="@+id/localEditText" />
 
     <TextView
         android:id="@+id/QuanttextView6"
@@ -96,7 +82,7 @@
         app:layout_constraintTop_toBottomOf="@+id/PrograDosetextView5" />
 
     <EditText
-        android:id="@+id/editTextNumber4"
+        android:id="@+id/quantidadeEditText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
@@ -126,7 +112,7 @@
         android:ems="10"
         android:inputType="time"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextNumber4" />
+        app:layout_constraintTop_toBottomOf="@+id/quantidadeEditText" />
 
     <TextView
         android:id="@+id/textView4"
@@ -172,4 +158,4 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/SegundoeditTextTime2" />
 
-</androidx.coordinatorlayout.widget.CoordinatorLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
