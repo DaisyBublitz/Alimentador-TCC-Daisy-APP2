@@ -3,11 +3,39 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/navgraph"
-    app:startDestination="@id/tela1">
+    app:startDestination="@id/homeFragment">
 
     <fragment
         android:id="@+id/tela1"
         android:name="com.example.alimentador_tcc_daisy_app.Tela1"
         android:label="fragment_tela1"
         tools:layout="@layout/fragment_1_telainicial" />
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.example.alimentador_tcc_daisy_app.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home">
+        <action
+            android:id="@+id/action_homeFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.example.alimentador_tcc_daisy_app.auth.LoginFragment"
+        android:label="fragment_login"
+        tools:layout="@layout/fragment_login" >
+        <action
+            android:id="@+id/action_loginFragment_to_addEditCadastroFragment"
+            app:destination="@id/addEditCadastroFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/addEditCadastroFragment"
+        android:name="com.example.alimentador_tcc_daisy_app.auth.AddEditCadastroFragment"
+        android:label="fragment_add_edit_cadastro"
+        tools:layout="@layout/fragment_add_edit_cadastro" >
+        <action
+            android:id="@+id/action_addEditCadastroFragment_to_homeFragment"
+            app:destination="@id/homeFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
 </navigation>
