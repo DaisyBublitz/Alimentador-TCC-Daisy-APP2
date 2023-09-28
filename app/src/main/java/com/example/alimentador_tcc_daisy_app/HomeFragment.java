@@ -14,6 +14,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -25,6 +27,8 @@ public class HomeFragment extends Fragment {
 
     private HomeViewModel mViewModel;
 
+    private TextView pesoHomeDeviceTextView;
+
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -33,7 +37,6 @@ public class HomeFragment extends Fragment {
             FirebaseUser user = mAuth.getCurrentUser();
             if (user != null) {
                 Log.d("TCC2023", "Usuário logado");
-                loadData();
             } else {
                 Log.d("TCC2023", "Usuário signed_out");
                 Navigation.findNavController(getView()).navigate(R.id.action_homeFragment_to_loginFragment);
@@ -45,9 +48,14 @@ public class HomeFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.fragment_home, container, false);
+
+        Button encher = v.findViewById(R.id.servirButton);
+        encher.setOnClickListener(view ->  encher());
+
         Button sair = v.findViewById(R.id.sairButton);
         sair.setOnClickListener( view -> { mAuth.signOut(); });
 
+        pesoHomeDeviceTextView = v.findViewById(R.id.pesoHomeDeviceTextView);
         return v;
     }
 
@@ -55,10 +63,16 @@ public class HomeFragment extends Fragment {
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
         mViewModel = new ViewModelProvider(this).get(HomeViewModel.class);
-        // TODO: Use the ViewModel
+
+        mViewModel.getPeso().observe(getViewLifecycleOwner(), peso -> {
+            pesoHomeDeviceTextView.setText(String.valueOf(peso));
+            Log.d("TCC2023", "Peso atualizado: " + peso);
+        });
     }
 
-    private void loadData() {
+    void encher() {
+        mViewModel.encherValor(1.0);
+        Toast.makeText(getContext(),"Solicitado ao dispositivo", Toast.LENGTH_LONG).show();
     }
 
     public void onStart() {
